@@ -4,4 +4,4 @@ By open and implement the document Training1.py, you can directly utilize it to 
 
 Due to the size limitations of physiochemical descriptors of all sequences, the npy containing these dataset were not submitted to github. For convenience, you can calculate it by codes provided in Training1.py. This process usually need 10 hours if you implement it on your normal laptop.
 This is a pure python algorithms based on python 3.8.
-For utilizing this algorithm, you need to download and install all mentioned packages in Training.py via Anaconda
+For utilizing this algorithm, you need to download and install all mentioned packages in Training1.py via Anaconda
