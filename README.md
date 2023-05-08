@@ -7,3 +7,19 @@ This is a pure python algorithm based on python 3.9.
 For utilizing this algorithm, you need to download and install all mentioned packages in Training1.py via Anaconda
 
 If you want to implement it on your local equipment, please be noted that our pipeline was implemented by python 3.9.7 with tensorflow packages.
+
+First, create your own conda environment:
+conda create -n tf2 python=3.9.7
+
+Activate your environment
+conda activate tf2
+
+Install tensorflow
+pip install tensorflow==2.0.0
+
+
+
+
+
+
+
