@@ -3,7 +3,7 @@ This is a new lightweight DL pipeline by using the currently largest scale of ph
 By open and implement the document Training1.py, you can directly utilize it to train and predict potential AMPs, the details are written in utils.py.
 
 Due to the size limitations of physiochemical descriptors of all sequences, the .npy document containing these dataset were not submitted to github. For convenience, you can calculate it by codes provided in Training1.py. This process usually needs 10 hours if you implement it on your normal laptop.
-This is a pure python algorithm based on python 3.8.
+This is a pure python algorithm based on python 3.9.
 For utilizing this algorithm, you need to download and install all mentioned packages in Training1.py via Anaconda
 
-If you want to implement it on your local equipment, please make sure that your python version is at least python3.9.7 with tensorflow packages
+If you want to implement it on your local equipment, please be noted that our pipeline was implemented by python3.9.7 with tensorflow packages.
