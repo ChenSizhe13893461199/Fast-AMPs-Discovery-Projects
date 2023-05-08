@@ -33,7 +33,7 @@ pip install keras==2.3.1
 Please be noted that the version of tensorflow and keras need to be matched, and you can find more information about that at 
 (https://cn.bing.com/images/search?view=detailV2&ccid=UrgoE5i0&id=0FAB48A265C885F25CD0DB203CE1F60EE1858E5D&thid=OIP.UrgoE5i0OZzU0ZH7sP0ClAHaEW&mediaurl=https%3a%2f%2fimg-blog.csdnimg.cn%2f2021041919594759.png%3fx-oss-process%3dimage%2fwatermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMyODkyNTQ%3d%2csize_16%2ccolor_FFFFFF%2ct_70&exph=709&expw=1207&q=keras%e4%b8%8etensorflow%e7%89%88%e6%9c%ac%e5%af%b9%e5%ba%94%e5%ae%98%e7%bd%91&simid=607998796419704018&FORM=IRPRST&ck=F5BA70A6D0DEC0AE9807A91CF2A9FCC9&selectedIndex=1&ajaxhist=0&ajaxserp=0)
 
-In the next step, you can install the corresponding descriptors packages.
+#In the next step, you can install the corresponding descriptors packages.
 
 pip install propy3
 
@@ -41,15 +41,24 @@ More information of this descriptor package can be found at https://propy3.readt
 
 There may be some differences between codes provided by descriptor package and the utilization of codes in Training1.py. Please be careful. This may be caused by delaying update on https://propy3.readthedocs.io/en/latest/UserGuide.html. You can adjust these codes when necessary.
 
+For biopython packages analyzing sequences physiochemical features,
 
+#Installation From Source
 
+pip install biopython
 
+However, if you need to compile Biopython yourself, the following are required at compile time:
 
+xcode-select --install
 
+Then either download and decompress our source code, or fetch it using git. Now change directory to the Biopython source code folder and run:
 
+pip install -e .
+python setup.py test
+sudo python setup.py install
 
+#For Testing, you can find more information about this part at https://github.com/biopython/biopython
 
-
-
-
+All these packages mentioned above besides biopython are necessary during the model training and prediction.
+The biopython can be very useful in sequences physiochemical features analysis towards the novel AMPs identified by our pipeline.
 
