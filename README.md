@@ -39,9 +39,7 @@ pip install propy3
 
 More information of this descriptor package can be found at https://propy3.readthedocs.io/en/latest/UserGuide.html
 
-
-
-
+There may be some differences between codes provided by descriptor package and the utilization of codes in Training1.py. Please be careful. This may be caused by delaying update on https://propy3.readthedocs.io/en/latest/UserGuide.html. You can adjust these codes when necessary.
 
 
 
