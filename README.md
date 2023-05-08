@@ -35,6 +35,17 @@ Please be noted that the version of tensorflow and keras need to be matched, and
 
 In the next step, you can install the corresponding descriptors packages.
 
+pip install propy3
+
+More information of this descriptor package can be found at https://propy3.readthedocs.io/en/latest/UserGuide.html
+
+
+
+
+
+
+
+
 
 
 
