@@ -8,19 +8,24 @@ For utilizing this algorithm, you need to download and install all mentioned pac
 
 If you want to implement it on your local equipment, please be noted that our pipeline was implemented by python 3.9.7 with tensorflow packages.
 
-First, create your own conda environment:
+#First, create your own conda environment:
+
 conda create -n tf2 python=3.9.7
 
-Activate your environment
+#Activate your environment
+
 conda activate tf2
 
-Install tensorflow
+#Install tensorflow
+
 pip install tensorflow==2.0.0
 
-Activate your environment
+#Activate your environment
+
 conda activate tf2
 
-Install corresponding keras
+#Install corresponding keras
+
 conda install mingw libpython
 pip install theano
 pip install keras==2.3.1
