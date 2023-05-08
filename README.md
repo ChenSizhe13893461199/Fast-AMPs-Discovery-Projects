@@ -17,6 +17,21 @@ conda activate tf2
 Install tensorflow
 pip install tensorflow==2.0.0
 
+Activate your environment
+conda activate tf2
+
+Install corresponding keras
+conda install mingw libpython
+pip install theano
+pip install keras==2.3.1
+
+Please be noted that the version of tensorflow and keras need to be matched, and you can find more information about that at https://cn.bing.com/images/search?view=detailV2&ccid=kiyLnG6o&id=4D6497BAA97A6711FEBBAB468953B69107D91D65&thid=OIP.kiyLnG6ofEmD2PhjdLqroAHaEP&mediaurl=https%3a%2f%2fimg-blog.csdnimg.cn%2fimg_convert%2fd264f64f857f13e5d8c6f2022e668728.png&exph=413&expw=720&q=keras%e4%b8%8etensorflow%e7%89%88%e6%9c%ac%e5%af%b9%e5%ba%94%e5%ae%98%e7%bd%91&simid=608007347696256376&FORM=IRPRST&ck=62370D51BB9A5F00BAB50F8716AA0793&selectedIndex=0&ajaxhist=0&ajaxserp=0
+
+
+
+
+
+
 
 
 
