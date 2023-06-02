@@ -7,11 +7,11 @@ The pre-trained model can be found in AMPfinder.rar.
 
 ## Requirements
 - python 3.9.7 or higher
-- tensorflow-gpu==1.13.1
-- pandas==0.24.2
+- tensorflow-gpu==
+- pandas==1.5.2
 - matplotlib==3.0.3
-- propy3
-- numpy
+- propy3 (https://propy3.readthedocs.io/en/latest/UserGuide.html)
+- numpy==1.23.5
 ## Implementation details:
 
 1. The training sequences were deposited in document TrainingAMP.csv
