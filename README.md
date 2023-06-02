@@ -32,7 +32,7 @@ For example:\
 ```X2tt = np.load(file="Test_vector.npy")# Descriptor of Test dataset```\
 ```X2_val = np.load(file="5810_vector.npy")# Descriptor of Validation dataset```\
 \
-And the pre-calculated physical/chemical descriptors have been deposited in 3 .npy documents.Due to the size limitations of physiochemical descriptors of all sequences, the .npy document containing these dataset were not submitted to github. For convenience, you can calculate it by codes provided in Training1.py. This process usually needs 10 hours if you implement it on your normal laptop. Or you can email chen2422679942@163.com for these documents. \
+And the pre-calculated physical/chemical descriptors have been deposited in 3 .npy documents.Due to the size limitations of physiochemical descriptors of all sequences, the .npy document containing these dataset were not submitted to github. For convenience, you can calculate it by codes provided in Training1.py. Or you can email chen2422679942@163.com for these documents. \
 \
 Or you can calculate the physical/chemical descriptors matrix by code:\
   ```Matr=getMatrixLabelFingerprint(train_file_name, win1)```
