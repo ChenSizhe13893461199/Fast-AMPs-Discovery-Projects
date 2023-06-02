@@ -1,9 +1,9 @@
 # Fast-AMPs-Discovery-Projects
 
-This is a new lightweight DL pipeline by using the currently largest scale of physicochemical descriptors. Unlike multiple model hybrids, our framework was lightweight and we mathematically designed a new self-attention module for the first time, potentially avoiding risks of overfitting.
-By open and implement the document Training1.py, you can directly utilize it to train and predict potential AMPs, the details are written in utils.py.
+This is a lightweight Deep Learning pipeline for AMPs predictions.
+By open and implement the document Training1.py, you can directly utilize it to train and predict potential AMPs, the details of the created model are written in utils.py.
 
-The pre-trained model can be found in AMPfinder.rar. 
+This repository contains models and data for predicting AMPs described in our paper.
 
 ## Requirements
 - python 3.9.7 or higher
