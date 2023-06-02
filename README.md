@@ -21,12 +21,14 @@ This repository contains models and data for predicting AMPs described in our pa
 
 This algorithm demand one-hot code matrix (sequential information，50×20) and physical/chemical descriptors matrix (91×17) as input.
 The one-hot code can be calculated by the three .csv documents aforementioned,\
+
 For example:\
   ```train_file_name = 'TrainingAMP.csv'  # Training dataset```\
   ```win1 = 50```\
   ```X1, T, rawseq, length = getMatrixLabelh(train_file_name, win1)```
 
 The physical/chemical descriptors matrix can also be calculated by three .csv documents aforementioned,\
+
 For example:\
 ```Matr=getMatrixLabelFingerprint(train_file_name, win1)```/
 \
