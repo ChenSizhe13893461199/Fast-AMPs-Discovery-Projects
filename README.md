@@ -11,6 +11,7 @@ The pre-trained model can be found in AMPfinder.rar.
 - pandas==0.24.2
 - matplotlib==3.0.3
 - propy3
+- numpy
 ## Implementation details:
 
 1. The training sequences were deposited in document TrainingAMP.csv
