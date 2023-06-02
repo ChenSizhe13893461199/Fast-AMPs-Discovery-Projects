@@ -21,6 +21,9 @@ For example:\
   ```win1 = 50```\
   ```X1, T, rawseq, length = getMatrixLabelh(train_file_name, win1)```
 
+The physical/chemical descriptors matrix can also be calculated by 3 .csv documents aforementioned by code,
+For example:\
+  ```Matr=getMatrixLabelFingerprint(train_file_name, win1)```
 
 ### AMPfinder codes
 
