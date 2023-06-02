@@ -12,14 +12,10 @@ For utilizing this algorithm, you need to download and install all mentioned pac
 
 If you want to implement it on your local equipment, please be noted that our pipeline was implemented by python 3.9.7 with tensorflow packages.
 
-Implementation details
+Implementation details:
 
-The training sequences were deposited in document TrainingAMP.csv
-
-
-
-
-
-
+1. The training sequences were deposited in document TrainingAMP.csv
+2. The validation sequences were deposited in document Validation.csv
+3. The test sequences were deposited in document Non-AMPsfilter.csv
 
 Relevant academic paper has been submitted to Nucleic Acids Research
