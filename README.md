@@ -48,6 +48,6 @@ It is very easy to train this model. You can open Training1.py in Spyder or Pyto
 
 The predictions will change slightly for your conditions. If you want to maintain the results of our model reported in our paper, you can load the pre-trained model (.h5 document) deposited in AMPfinder.rar.
 
-                                                #### Have a good time for AI calculations!!!
+####                                        Have a good time for AI calculations!!!
 
-                                                                                           #### —— Sizhe Chen
+####                                                                                  —— Sizhe Chen, the Chinese University of HongKong
