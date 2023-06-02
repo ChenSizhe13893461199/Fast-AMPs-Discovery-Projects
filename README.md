@@ -39,4 +39,4 @@ You can calculate the physical/chemical descriptors matrix by code:\
   ```Matr=getMatrixLabelFingerprint(train_file_name, win1)```
 
 ### AMPfinder codes
-
+It is very easy to train this model. You can open Training1.py in Spyder or Pytorch, and just run it.
