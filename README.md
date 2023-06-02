@@ -6,10 +6,11 @@ By open and implement the document Training1.py, you can directly utilize it to 
 The pre-trained model can be found in AMPfinder.rar. 
 
 ## Requirements
-- python 3.8 or higher
+- python 3.9.7 or higher
 - tensorflow-gpu==1.13.1
 - pandas==0.24.2
 - matplotlib==3.0.3
+- propy3\
 
 ## Implementation details:
 
