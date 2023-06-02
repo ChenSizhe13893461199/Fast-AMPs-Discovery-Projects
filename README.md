@@ -7,6 +7,9 @@ The pre-trained model can be found in AMPfinder.rar.
 
 ## Requirements
 - python 3.8 or higher
+- tensorflow-gpu==1.13.1
+- pandas==0.24.2
+- matplotlib==3.0.3
 
 ## Implementation details:
 
