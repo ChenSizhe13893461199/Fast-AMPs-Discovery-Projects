@@ -15,5 +15,5 @@ Implementation details:
 
 Relevant academic paper has been submitted to Nucleic Acids Research
 
-### cnn
+### AMPfinder codes
  python cnn/generate_12mer_kds.py \
