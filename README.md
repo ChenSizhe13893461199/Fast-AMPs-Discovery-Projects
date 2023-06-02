@@ -7,7 +7,7 @@ The pre-trained model can be found in AMPfinder.rar.
 
 ## Requirements
 - python 3.9.7 or higher
-- tensorflow-gpu==
+- keras==2.10.0
 - pandas==1.5.2
 - matplotlib==3.0.3
 - propy3 (https://propy3.readthedocs.io/en/latest/UserGuide.html)
