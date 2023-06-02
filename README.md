@@ -17,9 +17,9 @@ This algorithm demand one-hot code matrix (sequential information) and physical/
 The one-hot code can be calculated by 3 .csv documents aforementioned by code,
 
 For example:
-  ```train_file_name = 'TrainingAMP.csv'  # Training dataset```
-  ```win1 = 50```
-  ```X1, T, rawseq, length = getMatrixLabelh(train_file_name, win1)```
+  ```train_file_name = 'TrainingAMP.csv'  # Training dataset```\
+  ```win1 = 50```\
+  ```X1, T, rawseq, length = getMatrixLabelh(train_file_name, win1)```\
 
 
 ### AMPfinder codes
