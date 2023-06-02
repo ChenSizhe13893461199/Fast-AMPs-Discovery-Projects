@@ -52,3 +52,6 @@ The predictions will change slightly for your conditions. If you want to maintai
 
 #### Sizhe Chen, Division of Biomedical Science, Chinese University of Hong Kong, Shatin, NT, Hong Kong SAR (chen2422679942@163.com)
 #### Tian Liu, School of Bioengineering, Dalian University of Technology, Dalian 116024 (tianliu@dlut.edu.cn)
+#### Cangzhi Jia, School of Science, Dalian Maritime University (cangzhijia@dlmu.edu.cn)
+
+Please feel free to contact us if you have any suggestion. Thank you for your attention.
