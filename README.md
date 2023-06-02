@@ -10,7 +10,7 @@ The pre-trained model can be found in AMPfinder.rar.
 - tensorflow-gpu==1.13.1
 - pandas==0.24.2
 - matplotlib==3.0.3
-- propy3\
+- propy3
 ## Implementation details:
 
 1. The training sequences were deposited in document TrainingAMP.csv
