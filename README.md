@@ -14,8 +14,12 @@ Implementation details:
 3. The test sequences were deposited in document Non-AMPsfilter.csv
 
 This algorithm demand one-hot code matrix (sequential information) and physical/chemical descriptors matrix as input.
-The one-hot code can be calculated by 3 .csv documents aforementioned by code:
-Relevant academic paper has been submitted to Nucleic Acids Research
+The one-hot code can be calculated by 3 .csv documents aforementioned by code: 
+
+ train_file_name = 'TrainingAMP.csv'  # Training dataset
+ win1 = 50
+ X1, T, rawseq, length = getMatrixLabelh(train_file_name, win1)
+
 
 ### AMPfinder codes
 
