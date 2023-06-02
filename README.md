@@ -20,14 +20,14 @@ This repository contains models and data for predicting AMPs described in our pa
 3. The test sequences were deposited in document Non-AMPsfilter.csv
 
 This algorithm demand one-hot code matrix (sequential information) and physical/chemical descriptors matrix as input.
-The one-hot code can be calculated by 3 .csv documents aforementioned by code,
+The one-hot code can be calculated by three .csv documents aforementioned by code,
 
 For example:\
   ```train_file_name = 'TrainingAMP.csv'  # Training dataset```\
   ```win1 = 50```\
   ```X1, T, rawseq, length = getMatrixLabelh(train_file_name, win1)```
 
-The physical/chemical descriptors matrix can also be calculated by 3 .csv documents aforementioned by code,\
+The physical/chemical descriptors matrix can also be calculated by three .csv documents aforementioned by code,\
 For example:\
 \
 ```X2 = np.load(file="Training_vector.npy")# Descriptor of Training dataset```\
