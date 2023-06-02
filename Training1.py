@@ -183,10 +183,6 @@ plt.show()
 #if you want to introduce the pre-trained model by our team, please implement the following codes
 #model1.load_weights('AMP_Prediction111.h5')
 predictions_p = model1.predict([X1tt,X1tt,X2tt,X2tt])#Evaluating the effects on Test dataset
-#predictions_p1 = model1.predict([X111,X111,Matr11,Matr11])
-
-print(np.sum(predictions_p[990:,0]>0.5))#Print AMPs predictions
-print(np.sum(predictions_p[:990,1]>0.5))#Print Non-AMPs predictions
 
 
 
