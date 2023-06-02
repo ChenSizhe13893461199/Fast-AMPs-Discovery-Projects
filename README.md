@@ -10,7 +10,7 @@ The pre-trained model can be found in AMPfinder.rar.
 - keras==2.10.0
 - pandas==1.5.2
 - matplotlib==3.0.3
-- propy3 (tutorial:https://propy3.readthedocs.io/en/latest/UserGuide.html)
+- propy3 (tutorial: https://propy3.readthedocs.io/en/latest/UserGuide.html)
 - numpy==1.23.5
 ## Implementation details:
 
