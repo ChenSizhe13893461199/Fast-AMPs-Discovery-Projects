@@ -8,7 +8,7 @@ The pre-trained model can be found in AMPfinder.rar.
 ## Requirements
 - python 3.8 or higher
 
-Implementation details:
+## Implementation details:
 
 1. The training sequences were deposited in document TrainingAMP.csv
 2. The validation sequences were deposited in document Validation.csv
