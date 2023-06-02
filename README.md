@@ -7,11 +7,6 @@ Due to the size limitations of physiochemical descriptors of all sequences, the 
 
 The pre-trained model can be found in AMPfinder.rar. 
 
-This is a pure python algorithm based on python 3.9.
-For utilizing this algorithm, you need to download and install all mentioned packages in Training1.py via Anaconda
-
-If you want to implement it on your local equipment, please be noted that our pipeline was implemented by python 3.9.7 with tensorflow packages.
-
 Implementation details:
 
 1. The training sequences were deposited in document TrainingAMP.csv
