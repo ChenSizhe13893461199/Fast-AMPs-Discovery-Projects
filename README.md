@@ -14,3 +14,6 @@ Implementation details:
 3. The test sequences were deposited in document Non-AMPsfilter.csv
 
 Relevant academic paper has been submitted to Nucleic Acids Research
+
+### cnn
+ python cnn/generate_12mer_kds.py \
