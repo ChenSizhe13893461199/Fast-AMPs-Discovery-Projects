@@ -27,7 +27,7 @@ For example:\
   ```win1 = 50```\
   ```X1, T, rawseq, length = getMatrixLabelh(train_file_name, win1)```
 
-The physical/chemical descriptors matrix can also be calculated by three .csv documents aforementioned by code,\
+The physical/chemical descriptors matrix can also be calculated by three .csv documents aforementioned,\
 For example:\
 \
 ```X2 = np.load(file="Training_vector.npy")# Descriptor of Training dataset```\
