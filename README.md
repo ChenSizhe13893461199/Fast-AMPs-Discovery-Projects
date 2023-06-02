@@ -18,11 +18,3 @@ For utilizing this algorithm, you need to download and install all mentioned pac
 If you want to implement it on your local equipment, please be noted that our pipeline was implemented by python 3.9.7 with tensorflow packages.
 
 Implementation details
-
-python cnn/generate_12mer_kds.py \
---name all \
---mirdata sample_data/inputs/mirseqs.txt \
---mirlen 10 \
---passenger \
---load_model cnn/trained_model/model-100 \
---outfile sample_data/outputs/kds/MIR_kds.txt
