@@ -29,8 +29,9 @@ For example:\
 
 The physical/chemical descriptors matrix can also be calculated by three .csv documents aforementioned,\
 For example:\
-
-And the pre-calculated physical/chemical descriptors have been deposited in 3 .npy documents.
+```Matr=getMatrixLabelFingerprint(train_file_name, win1)```/
+\
+And the pre-calculated physical/chemical descriptors have been deposited in 3 .npy documents. You can directly load them by codes:\
 \
 ```X2 = np.load(file="Training_vector.npy")# Descriptor of Training dataset```\
 ```X2tt = np.load(file="Test_vector.npy")# Descriptor of Test dataset```\
