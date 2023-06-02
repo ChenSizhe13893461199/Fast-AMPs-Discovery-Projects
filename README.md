@@ -48,6 +48,7 @@ It is very easy to train this model. You can open Training1.py in Spyder or Pyto
 
 The predictions will change slightly for your conditions. If you want to maintain the results of our model reported in our paper, you can load the pre-trained model (.h5 document) deposited in AMPfinder.rar.
 
-####                                        Have a good time for AI calculations!!!
+#### Have a good time for AI calculations!!!
 
-####                                                                                  —— Sizhe Chen, the Chinese University of HongKong
+#### Sizhe Chen, Division of Biomedical Science, Chinese University of Hong Kong, Shatin, NT, Hong Kong SAR (chen2422679942@163.com)
+#### Tian Liu, School of Bioengineering, Dalian University of Technology, Dalian 116024 (tianliu@dlut.edu.cn)
