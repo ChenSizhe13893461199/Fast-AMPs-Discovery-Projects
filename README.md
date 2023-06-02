@@ -5,6 +5,9 @@ By open and implement the document Training1.py, you can directly utilize it to 
 
 The pre-trained model can be found in AMPfinder.rar. 
 
+## Requirements
+- python 3.8 or higher
+
 Implementation details:
 
 1. The training sequences were deposited in document TrainingAMP.csv
