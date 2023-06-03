@@ -20,7 +20,7 @@ This repository contains models and data for predicting AMPs described in our pa
 3. The test sequences were deposited in document Non-AMPsfilter.csv
 
 This algorithm demand one-hot code matrix (sequential information，50×20) and physical/chemical descriptors matrix (91×17) as input.
-The one-hot code can be calculated by the three .csv documents aforementioned,\
+The one-hot code can be calculated by the three .csv documents aforementioned.
 
 For example:\
   ```train_file_name = 'TrainingAMP.csv'  # Training dataset```\
