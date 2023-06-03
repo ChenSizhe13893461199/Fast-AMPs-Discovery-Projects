@@ -38,7 +38,7 @@ And the pre-calculated physical/chemical descriptors matrix (91×17) have been d
 ```X2tt = np.load(file="Test_vector.npy")# Descriptor of Test dataset```\
 ```X2_val = np.load(file="5810_vector.npy")# Descriptor of Validation dataset```\
 \
-Due to the size limitations of physiochemical descriptors of all sequences, the .npy document containing these dataset were not submitted to github. For convenience, you can calculate it by codes provided in Training1.py. Or you can email chen2422679942@163.com for these documents. \
+Due to the size limitations of physiochemical descriptors of all sequences, the .npy document containing these dataset were not submitted to github. For convenience, you can calculate it by codes provided in Training1.py. Or you can email chen2422679942@163.com for these documents. 
 
 ## AMPfinder pipeline
 It is very easy to train this model. You can open Training1.py in Spyder or Pytorch, and just run it. And more details or explanations can be found in annotations of Training1.py document. 
