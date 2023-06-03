@@ -29,8 +29,8 @@ For example:\
 
 The physical/chemical descriptors matrix can also be calculated by three .csv documents aforementioned,\
 
-For example:\
-```Matr=getMatrixLabelFingerprint(train_file_name, win1)```/
+For example, you can calculate the physical/chemical descriptors matrix by code:\
+  ```Matr=getMatrixLabelFingerprint(train_file_name, win1)```
 \
 And the pre-calculated physical/chemical descriptors matrix (91×17) have been deposited in 3 .npy documents. You can directly load them by codes:\
 \
@@ -40,8 +40,6 @@ And the pre-calculated physical/chemical descriptors matrix (91×17) have been d
 \
 Due to the size limitations of physiochemical descriptors of all sequences, the .npy document containing these dataset were not submitted to github. For convenience, you can calculate it by codes provided in Training1.py. Or you can email chen2422679942@163.com for these documents. \
 \
-You can calculate the physical/chemical descriptors matrix by code:\
-  ```Matr=getMatrixLabelFingerprint(train_file_name, win1)```
 
 ## AMPfinder pipeline
 It is very easy to train this model. You can open Training1.py in Spyder or Pytorch, and just run it. And more details or explanations can be found in annotations of Training1.py document. 
