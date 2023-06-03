@@ -27,7 +27,7 @@ For example:\
   ```win1 = 50```\
   ```X1, T, rawseq, length = getMatrixLabelh(train_file_name, win1)```
 
-The physical/chemical descriptors matrix can also be calculated by three .csv documents aforementioned,\
+The physical/chemical descriptors matrix can also be calculated by three .csv documents aforementioned,
 
 For example, you can calculate the physical/chemical descriptors matrix by code:\
   ```Matr=getMatrixLabelFingerprint(train_file_name, win1)```
