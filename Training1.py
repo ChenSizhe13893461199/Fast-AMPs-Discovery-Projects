@@ -126,7 +126,7 @@ dropout_dense = 0.2
 weight_decay = 0.000001
 nb_batch_size = 512
 nb_classes = 2
-nb_epoch = 11
+nb_epoch = 500
 
 model1 = Phos1(nb_classes, nb_layers, img_dim1, img_dim2, img_dim3,img_dim4, init_form, nb_dense_block,
               growth_rate, filter_size_block1, filter_size_block2, filter_size_block3,filter_size_block4,
