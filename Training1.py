@@ -159,7 +159,7 @@ model1.compile(loss='binary_crossentropy',optimizer=opt,metrics=['accuracy'])
 #history = model.fit([aaa[:43214],bbb[:43214],eee[:43214]], ddd[:43214], batch_size=nb_batch_size,validation_data=([aaa[43214:49214],bbb[43214:49214],eee[43214:49214]], ddd[43214:49214]),epochs=nb_epoch, shuffle=True, verbose=1)
 #history = model1.fit([aaa[:43404+2975],aaa[:43404+2975],bbb[:43404+2975],bbb[:43404+2975]], ddd[:43404+2975], batch_size=nb_batch_size,validation_data=([aaa[43404+2975:43404+4975],aaa[43404+2975:43404+4975],bbb[43404+2975:43404+4975],bbb[43404+2975:43404+4975]], ddd[43404+2975:43404+4975]),epochs=nb_epoch, shuffle=True, verbose=1)
 
-history = model1.fit([aaa[:43404+885],aaa[:43404+885],bbb[:43404+885],bbb[:43404+885]], ddd[:43404+885], batch_size=nb_batch_size,validation_data=([aaa[43404+885:49214],aaa[43404+885:49214],bbb[43404+885:49214],bbb[43404+885:49214]], ddd[43404+885:49214]),epochs=nb_epoch, shuffle=True, verbose=1)
+history = model1.fit([aaa[:43404],aaa[:43404],bbb[:43404],bbb[:43404]], ddd[:43404], batch_size=nb_batch_size,validation_data=([aaa[43404:49214],aaa[43404:49214],bbb[43404:49214],bbb[43404:49214]], ddd[43404:49214]),epochs=nb_epoch, shuffle=True, verbose=1)
 #history = model1.fit([X1[:],X1[:],X2[:],X2[:]], T[:], batch_size=nb_batch_size,validation_split=0.0,epochs=nb_epoch, shuffle=True, verbose=1)
 #validation_data=([a[43338:44209],b[43338:44209],c[43338:44209]], d[43338:44209]),
 # history = model.fit([X[2500:],Y[2500:]], T[2500:], batch_size=nb_batch_size,
