@@ -172,7 +172,7 @@ def getMatrixLabelh(positive_position_file_name, window_size=51, empty_aa = '*')
     return Matr, targetY,rawseq,length
 
 # 建立网络的函数
-def conv_factory(x, init_form, nb_filter, filter_size_block, dropout_rate=None, weight_decay=1E-4):
+def conv_factory(x, init_form, nb_filter, filter_size_block, dropout_rate, weight_decay=1E-4):
     """Apply BatchNorm, Relu 3x3Conv2D, optional dropout
 
     :param x: Input keras network
@@ -197,7 +197,7 @@ def conv_factory(x, init_form, nb_filter, filter_size_block, dropout_rate=None, 
     return x
 
 
-def transition(x, init_form, nb_filter, dropout_rate=None, weight_decay=1E-4):
+def transition(x, init_form, nb_filter, dropout_rate, weight_decay=1E-4):
     """Apply BatchNorm, Relu 1x1Conv2D, optional dropout and Maxpooling2D
 
     :param x: keras model
@@ -223,7 +223,7 @@ def transition(x, init_form, nb_filter, dropout_rate=None, weight_decay=1E-4):
     #x = AveragePooling2D((2,2), padding='same')(x)
     return x
 
-def transitionh(x, init_form, nb_filter, dropout_rate=None, weight_decay=1E-4):
+def transitionh(x, init_form, nb_filter, dropout_rate, weight_decay=1E-4):
     """Apply BatchNorm, Relu 1x1Conv2D, optional dropout and Maxpooling2D
 
     :param x: keras model
@@ -252,7 +252,7 @@ def transitionh(x, init_form, nb_filter, dropout_rate=None, weight_decay=1E-4):
 
 
 def denseblock(x, init_form, nb_layers, nb_filter, growth_rate,filter_size_block,
-               dropout_rate=None, weight_decay=1E-4):
+               dropout_rate, weight_decay=1E-4):
     """Build a denseblock where the output of each
        conv_factory is fed to subsequent ones
 
