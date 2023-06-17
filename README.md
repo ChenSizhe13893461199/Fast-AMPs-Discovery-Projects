@@ -47,7 +47,8 @@ The predictions will change slightly for your conditions. If you want to maintai
 
 ### Have a good time for AI calculations!!!
 
-##### Sizhe Chen, Division of Biomedical Science, Chinese University of Hong Kong, Shatin, NT, Hong Kong SAR (chen2422679942@163.com)
+##### Sizhe Chen, (1) Division of Biomedical Science, Chinese University of Hong Kong, Shatin, NT, Hong Kong SAR (chen2422679942@163.com)
+#####             (2) Department of Biomedical Sciences, City University of Hong Kong, Kowloon Tong, Hong Kong SAR, China
 ##### Tian Liu, School of Bioengineering, Dalian University of Technology, Dalian 116024 (tianliu@dlut.edu.cn)
 ##### Cangzhi Jia, School of Science, Dalian Maritime University (cangzhijia@dlmu.edu.cn)
 
