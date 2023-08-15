@@ -906,45 +906,6 @@ def plot_ROC(labels,preds,savepath):
     plt.legend(loc="lower right")
     # plt.show()
     plt.savefig(savepath)
-
-#（2）空间注意力机制
-import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras import layers, Model
-#（1）通道注意力
-def channel_attenstion(inputs, ratio=0.25):
- 
-    channel = inputs.shape[-1]  # 
- 
-    # 
-    # [h,w,c]==>[None,c]
-    x_max = layers.GlobalMaxPooling1D()(inputs)
-    x_avg = layers.GlobalAveragePooling1D()(inputs)
- 
-    # [None,c]==>[1,1,c]
-    x_max = layers.Reshape([1,1,-1])(x_max)  # -1
-    x_avg = layers.Reshape([1,1,-1])(x_avg)  # 
- 
-    # 1/4, [1,1,c]==>[1,1,c//4]
-    x_max = layers.Dense(channel*ratio)(x_max)
-    x_avg = layers.Dense(channel*ratio)(x_avg)
- 
-    # relu
-    x_max = layers.Activation('relu')(x_max)
-    x_avg = layers.Activation('relu')(x_avg)
- 
-    #  [1,1,c//4]==>[1,1,c]
-    x_max = layers.Dense(channel)(x_max)
-    x_avg = layers.Dense(channel)(x_avg)
- 
-    # [1,1,c]+[1,1,c]==>[1,1,c]
-    x = layers.Add()([x_max, x_avg])
- 
-    # 
-    x = tf.nn.sigmoid(x)
- 
-    # 
-    x = layers.Multiply()([inputs, x])  # [h,w,c]*[1,1,c]==>[h,w,c]
  
     return x
 
