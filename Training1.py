@@ -32,7 +32,7 @@ from sklearn import preprocessing
 from sklearn.model_selection import train_test_split, KFold, cross_val_score
 from utils import getMatrixLabel, Phos1, getMatrixInput, getMatrixInputh, getMatrixLabelFingerprint, getMatrixLabelh, plot_ROC
 from keras.optimizers import adam_v2
-from utils import channel_attenstion
+#from utils import channel_attenstion
 
 import matplotlib.pyplot as plt
 
