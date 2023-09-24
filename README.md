@@ -1,6 +1,6 @@
 # Fast-AMPs-Discovery-Projects
 
-This is a new Deep Learning pipeline for AMPs predictions.
+This is a new deep-learning pipeline for AMP predictions.
 By opening and implementing the document Training1.py, you can directly utilize it to train and predict potential AMPs, the details of the created model are written in utils.py.
 
 This repository contains models and data for predicting AMPs described in our paper.
@@ -38,12 +38,13 @@ And the pre-calculated physical/chemical descriptors matrixes (91×17) have been
 ```X2tt = np.load(file="Test_vector.npy")# Descriptor of Test dataset```\
 ```X2_val = np.load(file="5810_vector.npy")# Descriptor of Validation dataset```\
 \
-Due to the size limitations of physiochemical descriptors of all sequences, the .npy document containing these dataset were not submitted to github. For convenience, you can calculate it by the codes provided in Training1.py. Or you can email chen2422679942@163.com for these documents. 
+Due to the size limitations of physiochemical descriptors of all sequences, the .npy documents containing these datasets were not submitted to Git Hub. For convenience, you can calculate it by the codes provided in Training1.py. Or you can email chen2422679942@163.com for these documents. 
 
 ## AMPidentifer pipeline
-It is very easy to train this model. You can open Training1.py in Spyder or Pytorch and just run it. And more details or explanations can be found in the annotations of the Training1.py document. 
+It is very easy to train this model. You can open Training1.py in Spyder or Pytorch and just run it. More details or explanations can be found in the annotations of the Training1.py document. 
 
-The predictions will change slightly for your conditions. If you want to maintain the results of our model reported in our paper, you can load the pre-trained model (.h5 document) deposited in AMPfinder.rar.
+## Model Prediction Results
+The predictions will change slightly for your conditions. If you want to maintain the results of our model reported in our paper, you can load the pre-trained model (.h5 document) deposited in AMPfinder.rar. The .h5 files of each model strategy can be found in the “Model” directory at the aforementioned GitHub link.
 
 ### Have a good time for AI calculations!!!
 
