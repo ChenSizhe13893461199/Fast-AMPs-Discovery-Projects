@@ -37,7 +37,7 @@ def build_model(input_shape, head_size, num_heads, ff_dim, num_transformer_block
 
 
 
-model = build_model(input_shape=(50, 20), head_size=256, num_heads=4, ff_dim=4, num_transformer_blocks=4, mlp_units=[128], dropout=0.4, mlp_dropout=0.4)
+model = build_model(input_shape=(50, 20), head_size=256, num_heads=4, ff_dim=4, num_transformer_blocks=4, mlp_units=[128], dropout=0.2, mlp_dropout=0.2)
 model.compile(optimizer=keras.optimizers.Adam(learning_rate=1e-4), loss="binary_crossentropy", metrics=["accuracy"])
 
 
