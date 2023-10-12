@@ -42,4 +42,4 @@ model.compile(optimizer=keras.optimizers.Adam(learning_rate=1e-4), loss="binary_
 
 
 #fill the [] with your input data
-model.fit([], T[:,1], validation_data=([], ddd[43404:,1]), epochs=10, batch_size=32)
+model.fit([], T[:,1], validation_data=([], []), epochs=10, batch_size=32)
