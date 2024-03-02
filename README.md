@@ -1,6 +1,7 @@
 # Fast-AMPs-Discovery-Projects
 
-This is a new deep-learning pipeline for AMP predictions.
+This is a new deep-learning pipeline for AMP predictions. On the independent test dataset, it showed robust prediction performance and potentially avoided high false-positive conditions. Regarding the overall time costs, it only needs 15,374 ± 169 s for training and predictions on a normal laptop. By applying it to the gut microbiomes of cockroach Blattella germanica, a series of new AMPs with low cytotoxicity and antimicrobial activities in vitro and in vivo were successfully identified. In summary, the AMPidentifier 1.0 has shown promising potential in discovering bio-safe AMPs from nature for medical applications.
+
 By opening and implementing the document Training1.py, you can directly utilize it to train and predict potential AMPs, the details of the created model are written in utils.py.
 
 This repository contains models and data for predicting AMPs described in our paper.
