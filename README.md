@@ -4,7 +4,7 @@ This is a new deep-learning pipeline for AMP predictions. On the independent tes
 
 The preprint version of our research paper is now available at BioRexiv (The discovery of antimicrobial peptides from the gut microbiome of cockroach Blattella germanica using deep learning pipeline. Sizhe Chen, Huitang Qi, Xingzhuo Zhu, Tianxiang Liu, Yingda Teng, Qiuyu Gong, Cangzhi Jia, Tian Liu. bioRxiv 2024.02.12.580024; doi: https://doi.org/10.1101/2024.02.12.580024). The formal version of this research is currently under review and will be published soon.
 
-By opening and implementing the document Training1.py, you can directly utilize it to train and predict potential AMPs, the details of the created model are written in utils.py.
+By opening and implementing the document Training1.py, you can directly utilize AMPidentifer to train and predict potential AMPs, the details of the created model are written in utils.py.
 
 This repository contains models and data for predicting AMPs described in our paper.
 
