@@ -51,7 +51,7 @@ The predictions will change slightly for your conditions. If you want to maintai
 
 ### Have a fun time with AI calculations!!!
 
-##### Sizhe Chen, Doctor of MedicinePhD Student at Chinese University of HongKong (Chen2422679942@163.com)
+##### Sizhe Chen, Doctor of Medicine, PhD Student at Chinese University of HongKong (Chen2422679942@163.com)
 ##### Tian Liu, Professor at the School of Bioengineering, Dalian University of Technology, Dalian 116024 (tianliu@dlut.edu.cn)
 ##### Cangzhi Jia, Professor at the School of Science, Dalian Maritime University (cangzhijia@dlmu.edu.cn)
 
