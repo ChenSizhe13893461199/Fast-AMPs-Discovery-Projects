@@ -50,6 +50,9 @@ It is very easy to train this model. You can open Training1.py in Spyder or Pyto
 ## Model Prediction Results
 The predictions will change slightly for your conditions. If you want to maintain the results of our model reported in our paper, you can load the pre-trained model (.h5 document) deposited in AMPfinder.rar. Other .h5 files of each model strategy generated from iterative training and comparisons can be found in the “Model” directory.
 
+## The Core Part of the Model
+![](1.png)
+
 ## The Mechanisms of the Attention Part
 ![](FigureS1.png)
 
