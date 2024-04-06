@@ -1,6 +1,6 @@
 # Fast-AMPs-Discovery-Projects
 
-This is a new deep-learning pipeline for AMP predictions. On the independent test dataset, it showed robust prediction performance and potentially avoided high false-positive conditions. Regarding the overall time costs, it only needs 15,374 ± 169 s for training and predictions on a normal laptop. By applying it to the gut microbiomes of cockroach _Blattella germanica_, a series of new AMPs with low cytotoxicity and antimicrobial activities in vitro and in vivo were successfully identified. 
+This is a new deep-learning pipeline for AMP predictions. On the independent test dataset, it showed robust prediction performance and potentially avoided high false-positive conditions. Regarding the overall time costs, it only needs 15,374 ± 169 s for training and predictions on a normal laptop. Applying it to the gut microbiomes of cockroach _Blattella germanica_successfully identified a series of new AMPs with low cytotoxicity and antimicrobial activities in vitro and in vivo. 
 
 The preprint version of our research paper is now available at BioRexiv (The discovery of antimicrobial peptides from the gut microbiome of cockroach Blattella germanica using deep learning pipeline. Sizhe Chen, Huitang Qi, Xingzhuo Zhu, Tianxiang Liu, Yingda Teng, Qiuyu Gong, Cangzhi Jia, Tian Liu. bioRxiv 2024.02.12.580024; doi: https://doi.org/10.1101/2024.02.12.580024). The formal version of this research is currently under review and will be published soon.
 
@@ -52,6 +52,8 @@ The predictions will change slightly for your conditions. If you want to maintai
 
 ## The Core Part of the Model
 ![](1.png)
+
+Here we designed a new DL pipeline to establish AMP identification tools, including two nine-layers computational blocks inspired by previous work of Dense-Net 48 and one embedded new self-attention module proposed in this work (Figure 1), in which the previous Dense-Net is well-known for low scales of fitting parameters and avoidance of gradient vanishing.
 
 ## The Mechanisms of the Attention Part
 ![](FigureS1.png)
