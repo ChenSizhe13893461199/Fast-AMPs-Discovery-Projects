@@ -9,6 +9,9 @@ By opening and implementing the document Training1.py, you can directly utilize 
 This repository contains models and data for predicting AMPs described in our paper.
 
 ![](Graphic_Abstract.png)
+
+## The Work Flow of This Project
+
 ## Requirements
 - python 3.9.7 or higher
 - keras==2.10.0
