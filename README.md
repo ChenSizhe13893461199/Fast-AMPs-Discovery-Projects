@@ -49,6 +49,8 @@ It is very easy to train this model. You can open Training1.py in Spyder or Pyto
 ## Model Prediction Results
 The predictions will change slightly for your conditions. If you want to maintain the results of our model reported in our paper, you can load the pre-trained model (.h5 document) deposited in AMPfinder.rar. Other .h5 files of each model strategy generated from iterative training and comparisons can be found in the “Model” directory.
 
+## The Mechanisms of the Attention Part
+![]([images/example](https://github.com/ChenSizhe13893461199/Fast-AMPs-Discovery-Projects/edit/main/Figure S1/.tiff)
 ### Have a fun time with AI calculations!!!
 
 ##### Sizhe Chen, Doctor of Medicine, PhD Student at Chinese University of HongKong (Chen2422679942@163.com)
