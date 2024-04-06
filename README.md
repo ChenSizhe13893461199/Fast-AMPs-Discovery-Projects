@@ -61,7 +61,7 @@ Here we designed a new DL pipeline to establish AMP identification tools, includ
 ## The Mechanisms of the Attention Part
 ![](FigureS1.png)
 
-The Attention Part designed in this work showed improved performance in the AMP prediction task. We assumed that the self-attention module may improve the recognition of critical features and prevent information loss during training.
+The Attention Part designed in this work improved the overall performance of the AMP prediction task. We assumed that the self-attention module may enhance the recognition of critical features and prevent information loss during training.
 
 ### Have a fun time with AI calculations!!!
 
