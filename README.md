@@ -53,10 +53,12 @@ The predictions will change slightly for your conditions. If you want to maintai
 ## The Core Part of the Model
 ![](1.png)
 
-Here we designed a new DL pipeline to establish AMP identification tools, including two N-layers computational blocks inspired by previous work of Dense-Net and one embedded new self-attention module proposed in this work (Figure 1), in which the previous Dense-Net is well-known for low scales of fitting parameters and avoidance of gradient vanishing.
+Here we designed a new DL pipeline to establish AMP identification tools, including two N-layers computational blocks inspired by previous work of Dense-Net and one embedded new self-attention module proposed in this work, in which the previous Dense-Net is well-known for low scales of fitting parameters and avoidance of gradient vanishing.
 
 ## The Mechanisms of the Attention Part
 ![](FigureS1.png)
+
+The Attention Part designed in this work showed improved performance in the AMP prediction task. We assumed that the self-attention module may improve the recognition of critical features and prevent information loss during training.
 
 ### Have a fun time with AI calculations!!!
 
