@@ -1,5 +1,11 @@
 # Fast-AMPs-Discovery-Projects
 
+### Have a fun time with AI calculations!!!
+
+##### Sizhe Chen, Doctor of Medicine, PhD Student at Chinese University of HongKong (Chen2422679942@163.com), supervisor: Professor Francis K. L. Chan and research assistant professor Qi Su
+##### Tian Liu, Professor at the School of Bioengineering, Dalian University of Technology, Dalian 116024 (tianliu@dlut.edu.cn)
+##### Cangzhi Jia, Professor at the School of Science, Dalian Maritime University (cangzhijia@dlmu.edu.cn)
+
 This is a new deep-learning pipeline for AMP predictions. On the independent test dataset, it showed robust prediction performance and potentially avoided high false-positive conditions. Regarding the overall time costs, it only needs 15,374 ± 169 s for training and predictions on a normal laptop. Applying it to the gut microbiomes of cockroach _Blattella germanica_ successfully identified a series of new AMPs with low cytotoxicity and antimicrobial activities in vitro and in vivo. 
 
 The preprint version of our research paper is now available at BioRexiv (The discovery of antimicrobial peptides from the gut microbiome of cockroach Blattella germanica using deep learning pipeline. Sizhe Chen, Huitang Qi, Xingzhuo Zhu, Tianxiang Liu, Yingda Teng, Qiuyu Gong, Cangzhi Jia, Tian Liu. bioRxiv 2024.02.12.580024; doi: https://doi.org/10.1101/2024.02.12.580024). The formal version of this research is currently under review and will be published soon.
@@ -62,11 +68,5 @@ Here we designed a new DL pipeline to establish AMP identification tools, includ
 ![](FigureS1.png)
 
 The Attention Part designed in this work improved the overall performance of the AMP prediction task. We assumed that the self-attention module may enhance the recognition of critical features and prevent information loss during training.
-
-### Have a fun time with AI calculations!!!
-
-##### Sizhe Chen, Doctor of Medicine, PhD Student at Chinese University of HongKong (Chen2422679942@163.com)
-##### Tian Liu, Professor at the School of Bioengineering, Dalian University of Technology, Dalian 116024 (tianliu@dlut.edu.cn)
-##### Cangzhi Jia, Professor at the School of Science, Dalian Maritime University (cangzhijia@dlmu.edu.cn)
 
 Please feel free to contact us if you have any suggestions. Thank you for your attention.
