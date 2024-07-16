@@ -64,3 +64,6 @@ Here we designed a new DL pipeline to establish AMP identification tools, includ
 The Attention Part designed in this work improved the overall performance of the AMP prediction task. We assumed that the self-attention module may enhance the recognition of critical features and prevent information loss during training.
 
 Please feel free to contact us if you have any suggestions. Thank you for your attention.
+
+## Citation
+The preprint of our work is currently available at bioRexiv (http://dx.doi.org/10.1101/2024.02.12.580024), and the formal paper is under review. You can cite: Sizhe Chen, Huitang Qi, Xingzhuo Zhu, Tianxiang Liu, Yingda Teng, Qiuyu Gong, Cangzhi Jia, Tian Liu. The discovery of antimicrobial peptides from the gut microbiome of cockroach Blattella germanica using deep learning pipeline. bioRexiv; doi: 10.1101/2024.02.12.580024. if our work is helpful to your research.
