@@ -2,7 +2,7 @@
 
 ### Have a fun time with AI calculations!!!
 
-##### Sizhe Chen, PhD Student (Medical Sciences) at Chinese University of HongKong (Chen2422679942@163.com), supervisor: Professor Francis K. L. Chan and Research Assistant Professor Qi Su
+##### Sizhe Chen, PhD Student (Medical Sciences) at Chinese University of HongKong (Chen2422679942@163.com or 1155202847@link.cuhk.edu.hk), supervisor: Professor Francis K. L. Chan and Research Assistant Professor Qi Su
 
 This is a new deep-learning pipeline for AMP predictions. On the independent test dataset, it showed robust prediction performance and potentially avoided high false-positive conditions. Regarding the overall time costs, it only needs 4.27±0.05 hours for training and predictions on a normal laptop. Applying it to the gut microbiomes of cockroach _Blattella germanica_ successfully identified a series of new AMPs with low cytotoxicity and antimicrobial activities in vitro and in vivo. 
 
