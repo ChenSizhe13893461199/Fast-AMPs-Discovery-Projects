@@ -2,7 +2,7 @@
 ### Brief Introduction of Developers
 
 #### Author Introduction
-**Sizhe Chen**, PhD Student (Medical Sciences) at Chinese University of HongKong (Chen2422679942@163.com or 1155202847@link.cuhk.edu.hk), supervisor: **Professor Francis K. L. Chan** and **Research Assistant Professor Qi Su**. Welcome to contact with Sizhe Chen via the aforementioned email if you have any questions or suggestions.
+**Sizhe Chen**, PhD Student (Medical Sciences) at Chinese University of HongKong (1155202847@link.cuhk.edu.hk), supervisor: **Professor Francis K. L. Chan** and **Research Assistant Professor Qi Su**. Welcome to contact with Sizhe Chen via the aforementioned email if you have any questions or suggestions.
 
 This work is supervised by **Professor Tian Liu**, **Professor Cangzhi Jia**, and **Research Associate Fellow Qiuyu Gong**. The research work is primiarily finished by **Sizhe Chen** (PhD student), **Huitang Qi** (PhD student), and **Xingzhuo Zhu** (MPhil student) with equal contributions. 
 
