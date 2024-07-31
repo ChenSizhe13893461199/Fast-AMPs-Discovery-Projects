@@ -1,4 +1,5 @@
 # Fast-AMPs-Discovery-Projects
+![](Graphical Abstract.png)
 ### Brief Introduction of Developers
 
 #### Developer Introduction
