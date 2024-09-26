@@ -69,13 +69,13 @@ Here we designed a new DL pipeline to establish AMP identification tools, includ
 ## The Mechanisms of the Attention Part
 ![](FigureS1.png)
 
+The Attention Part designed in this work improved the overall performance of the AMP prediction task. We assumed that the self-attention module may enhance the recognition of critical features and prevent information loss during training.
+
 ## Utilizations Procedures
 1. You can implement AMPidentifier on your own laptop by opening Training1.py in Spyder or Pytorch.
 2. Import all necessary functions and packages. (This part has been included in the Training1.py)
 3. Calculate descriptors for each given sequence provided in csv document. (The exact format is the same as the csv document provided in this github link)
 4. Model training by using the training data and the validation dataset, and assess performances by using and the test dataset.
-5. Make predictions and obtain the probability of being AMP or non-AMP for a given sequence. 
-
-The Attention Part designed in this work improved the overall performance of the AMP prediction task. We assumed that the self-attention module may enhance the recognition of critical features and prevent information loss during training.
+5. Make predictions and obtain the probability of being AMP or non-AMP for a given sequence.
 
 Please feel free to contact us if you have any suggestions. Thank you for your attention.
