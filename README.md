@@ -28,6 +28,7 @@ This repository contains models and data for predicting AMPs described in our pa
 - propy3 (tutorial: https://propy3.readthedocs.io/en/latest/UserGuide.html)
 - numpy==1.23.5
 - sklearn=1.2.0
+- propy3=1.1.0
 ## Implementation details:
 
 1. The training sequences were deposited in the document TrainingAMP.csv
