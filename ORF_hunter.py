@@ -27,7 +27,7 @@ with open("your file.fasta") as infile:
               a=pos_dict[key]
               
 
-outfile = open('RNA-seq1.csv', 'w')
+outfile = open('your file.csv', 'w')
 
 for key in list(pos_dict.keys())[:]:
 
