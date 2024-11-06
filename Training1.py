@@ -146,13 +146,6 @@ history = model1.fit([aaa[:43404],aaa[:43404],bbb[:43404],bbb[:43404]], ddd[:434
 
 model1.save_weights('AMP_Prediction1.h5',overwrite=True)#869,38150
 
-plt.plot(history.history['accuracy'])
-plt.title('Model accuracy')
-plt.ylabel('Accuracy')
-plt.xlabel('Epoch')
-plt.legend(['Train', 'Test'], loc='upper left')
-plt.show()
-
 #if you want to introduce the pre-trained model by our team, please implement the following codes
 #model1.load_weights('AMP_Prediction111.h5')
 predictions_p = model1.predict([X1tt,X1tt,X2tt,X2tt])#Evaluating the effects on Test dataset
