@@ -2,6 +2,7 @@
 ![](GraphicalAbstract.png)
 
 This research has been accepted by **_Microbiome_** with citation format:  
+
 [1] **Sizhe Chen#**, Huitang Qi#, Xingzhuo Zhu#, Tianxiang Liu, Yutin Fan, Qi Su, Qiuyu Gong*, Cangzhi Jia*, Tian Liu*. Screening and identification of antimicrobial peptides from the gut microbiome of cockroach _Blattella germanica_. **_Microbiome_** 2024. IF=16.837 (In Press) doi: **10.1186/s40168-024-01985-9**.
 
 ### Brief Introduction of Developers
