@@ -68,7 +68,7 @@ The predictions will change slightly for your conditions. If you want to maintai
 ## The Core Part of the Model
 ![](1.png)
 
-Here we designed a new DL pipeline to establish AMP identification tools, including two N-layer computational blocks and one delicately embedded new self-attention module proposed in this work.
+Here we designed a new DL pipeline to establish AMP identification tools, including two N-layer computational blocks and one delicately embedded new self-attention module proposed in this research.
 
 ## The Mechanisms of the Attention Part
 ![](FigureS1.png)
