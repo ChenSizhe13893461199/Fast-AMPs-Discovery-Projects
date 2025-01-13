@@ -68,15 +68,21 @@ from sklearn.preprocessing import StandardScaler
 # *************************************************************
 train_file_name = 'TrainingAMP.csv'  # Training dataset
 win1 = 50
+Matr = getMatrixLabelFingerprint(train_file_name, win1)#generate descriptor
+np.save("Training_vector.npy", Matr)
 
 X1, T, rawseq, length = getMatrixLabelh(train_file_name, win1)
 train_file_name = 'Non-AMPsfilter.csv'  # Test dataset
 
 win1 = 50
+Test_Matr = getMatrixLabelFingerprint(train_file_name, win1)  # Generate descriptor
+np.save("Test_vector.npy", Test_Matr)  # Save descriptor
 X1tt, y_train1, rawseq1, length = getMatrixLabelh(train_file_name, win1)
 
 train_file_name = 'Validation.csv' #Validation dataset
 win1 = 50
+Validation_Matr = getMatrixLabelFingerprint(train_file_name, win1)  # Generate descriptor
+np.save("5810_vector.npy", Validation_Matr)  # Save descriptor
 X_val, y_train111, rawseq116, length = getMatrixLabelh(train_file_name, win1)
 
 X2 = np.load(file="Training_vector.npy")# Descriptor of Training dataset
