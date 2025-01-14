@@ -6,6 +6,7 @@ Created on Thu May 18 19:45:56 2022
 """
 import os
 import string
+import pandas as pd
 from keras.models import Model
 from keras.layers.core import Dense, Dropout, Activation
 from keras.layers.convolutional import Convolution2D
@@ -66,96 +67,137 @@ from propy.AAComposition import GetSpectrumDict
 from propy.AAComposition import Getkmers
 from sklearn.preprocessing import StandardScaler
 # *************************************************************
-train_file_name = 'TrainingAMP.csv'  # Training dataset
-win1 = 50
-Matr = getMatrixLabelFingerprint(train_file_name, win1)#generate descriptor
-np.save("Training_vector.npy", Matr)
+if __name__ == '__main__':
+    train_file_name = 'TrainingAMP.csv'  # Training dataset
+    win1 = 50
+    if not os.path.exists("Training_vector.npy"):
+        print(f"Processing file: {train_file_name}")
+        Matr = getMatrixLabelFingerprint(train_file_name, win1)  # Generate descriptor
+        np.save("Training_vector.npy", Matr)
+    else:
+        Matr = np.load("Training_vector.npy")
+    X1, T, rawseq, length = getMatrixLabelh(train_file_name, win1)
+    train_file_name = 'Non-AMPsfilter.csv'  # Test dataset
 
-X1, T, rawseq, length = getMatrixLabelh(train_file_name, win1)
-train_file_name = 'Non-AMPsfilter.csv'  # Test dataset
+    win1 = 50
+    data = pd.read_csv(train_file_name)
+    data.columns = ['label', 'Sequence']
+    filtered_data = data[data['Sequence'].str.len() >= 11]
+    removed_data = data[data['Sequence'].str.len() < 11]
+    filtered_data.to_csv('Filtered_TrainingAMP.csv', index=False, header=False)
+    removed_data.to_csv('Removed_TrainingAMP.csv', index=False, header=False)
+    print(f"Original DATA: {len(data)}")
+    print(f"Filtered DATA: {len(filtered_data)}")
+    print(f"Removed DATA: {len(removed_data)}")
+    train_file_name = 'Filtered_TrainingAMP.csv'
+    win1 = 600
+    if os.path.exists(train_file_name):
+        user_choice = input(f"'{train_file_name}' detected. Do you want to generate matrix? (y/n): ").strip().lower()
+        if user_choice == 'y':
+            print(f"Processing file: {train_file_name}")
+            Test_Matr = getMatrixLabelFingerprint(train_file_name, win1)  # Generate descriptor
+            np.save("Test_vector.npy", Test_Matr)  # Save descriptor
+        else:
+            print("Skipping matrix generation for Non-AMPsfilter.csv.")
+    else:
+        print(f"'{train_file_name}' not detected.Generating....")
+        print(f"Processing file: {train_file_name}")
+        Test_Matr = getMatrixLabelFingerprint(train_file_name, win1)  # Generate descriptor
+        np.save("Test_vector.npy", Test_Matr)  # Save descriptor
+    X1tt, y_train1, rawseq1, length = getMatrixLabelh(train_file_name, win1)
 
-win1 = 50
-Test_Matr = getMatrixLabelFingerprint(train_file_name, win1)  # Generate descriptor
-np.save("Test_vector.npy", Test_Matr)  # Save descriptor
-X1tt, y_train1, rawseq1, length = getMatrixLabelh(train_file_name, win1)
+    train_file_name = 'Validation.csv' #Validation dataset
+    win1 = 50
+    Validation_Matr = getMatrixLabelFingerprint(train_file_name, win1)  # Generate descriptor
+    np.save("5810_vector.npy", Validation_Matr)  # Save descriptor
+    X_val, y_train111, rawseq116, length = getMatrixLabelh(train_file_name, win1)
 
-train_file_name = 'Validation.csv' #Validation dataset
-win1 = 50
-Validation_Matr = getMatrixLabelFingerprint(train_file_name, win1)  # Generate descriptor
-np.save("5810_vector.npy", Validation_Matr)  # Save descriptor
-X_val, y_train111, rawseq116, length = getMatrixLabelh(train_file_name, win1)
+    X2 = np.load(file="Training_vector.npy")# Descriptor of Training dataset
+    X2tt = np.load(file="Test_vector.npy")# Descriptor of Test dataset
+    X2_val = np.load(file="5810_vector.npy")# Descriptor of Validation dataset
+    #For calculating physiochemical descriptors, implement Matr=getMatrixLabelFingerprint(train_file_name, win1)
+    ###################################################################
+    #Constructing Matrix
+    aaa = np.zeros((43404+5810, 50, 20))
+    bbb = np.zeros((43404+5810, 91, 17))
+    aaa[:43404] = X1[:]
+    aaa[43404:] = X_val[:]
+    bbb[:43404] = X2[:]
+    bbb[43404:] = X2_val[:]
 
-X2 = np.load(file="Training_vector.npy")# Descriptor of Training dataset
-X2tt = np.load(file="Test_vector.npy")# Descriptor of Test dataset
-X2_val = np.load(file="5810_vector.npy")# Descriptor of Validation dataset
-#For calculating physiochemical descriptors, implement Matr=getMatrixLabelFingerprint(train_file_name, win1)
-###################################################################
-#Constructing Matrix
-aaa = np.zeros((43404+5810, 50, 20))
-bbb = np.zeros((43404+5810, 91, 17))
-aaa[:43404] = X1[:]
-aaa[43404:] = X_val[:]
-bbb[:43404] = X2[:]
-bbb[43404:] = X2_val[:]
+    ddd = np.zeros(shape=(43404+5810, 2))
+    ddd[:43404] = T[:]
+    ddd[43404:] = y_train111[:]
+    ###################################################################
+    # Model Training
+    #a1=aaa
+    #b1=bbb
+    #e1=eee
+    img_dim1 = aaa.shape[1:]
 
-ddd = np.zeros(shape=(43404+5810, 2))
-ddd[:43404] = T[:]
-ddd[43404:] = y_train111[:]
-###################################################################
-# Model Training
-#a1=aaa
-#b1=bbb
-#e1=eee
-img_dim1 = aaa.shape[1:]
+    img_dim2 = aaa.shape[1:]
 
-img_dim2 = aaa.shape[1:]
+    img_dim3 = bbb.shape[1:] #img_dim3 = aaa.shape[1:]
 
-img_dim3 = bbb.shape[1:] #img_dim3 = aaa.shape[1:]
-
-img_dim4 = bbb.shape[1:] #img_dim4 = aaa.shape[1:]
+    img_dim4 = bbb.shape[1:] #img_dim4 = aaa.shape[1:]
 
 
-init_form = 'RandomUniform'
-learning_rate = 0.0015#0.001
-nb_dense_block = 9
-nb_layers = 9
-nb_filter = 36
-growth_rate = 36
-filter_size_block1 = 11
-filter_size_block2 = 7
-filter_size_block3 = 11
-filter_size_block4 = 7
-filter_size_ori = 1
-dense_number = 36
-dropout_rate = 0.2
-dropout_dense = 0.2
-weight_decay = 0.000001
-nb_batch_size = 512
-nb_classes = 2
-nb_epoch = 500
+    init_form = 'RandomUniform'
+    learning_rate = 0.0015#0.001
+    nb_dense_block = 9
+    nb_layers = 9
+    nb_filter = 36
+    growth_rate = 36
+    filter_size_block1 = 11
+    filter_size_block2 = 7
+    filter_size_block3 = 11
+    filter_size_block4 = 7
+    filter_size_ori = 1
+    dense_number = 36
+    dropout_rate = 0.2
+    dropout_dense = 0.2
+    weight_decay = 0.000001
+    nb_batch_size = 512
+    nb_classes = 2
+    nb_epoch = 500
 
-model1 = Phos1(nb_classes, nb_layers, img_dim1, img_dim2, img_dim3,img_dim4, init_form, nb_dense_block,
-              growth_rate, filter_size_block1, filter_size_block2, filter_size_block3,filter_size_block4,
-              nb_filter, filter_size_ori,dense_number, dropout_rate, dropout_dense, weight_decay)
+    model1 = Phos1(nb_classes, nb_layers, img_dim1, img_dim2, img_dim3,img_dim4, init_form, nb_dense_block,
+                  growth_rate, filter_size_block1, filter_size_block2, filter_size_block3,filter_size_block4,
+                  nb_filter, filter_size_ori,dense_number, dropout_rate, dropout_dense, weight_decay)
 
-# 模型可视化
-print(model1.summary())
-plot_model(model1, to_file='DTLDephos.png',
-           show_shapes=True, show_layer_names=True)
+    # let user choose to train new model or use pre-trained model
+    user_choice = input("是否使用预训练模型？输入'y'使用预训练模型，输入'n'进行新模型训练: ").strip().lower()
+    if user_choice == 'y':
+        model1.load_weights('AMP_Prediction111.h5')
+        if os.path.exists("AMP_Prediction111.h5"):
+            print("Pre-trained model detected. Loading weights...")
+            model.load_weights("AMP_Prediction111.h5")
+        else:
+            print("Pre-trained model not detected. Training new model...")
+            user_choice = 'n'
 
-opt = adam_v2.Adam(learning_rate=learning_rate,
-                   beta_1=0.9, beta_2=0.999, epsilon=1e-08)
+    if user_choice == 'n':
+        print("Training new model...")
+        history = model1.fit([aaa[:43404],aaa[:43404],bbb[:43404],bbb[:43404]], ddd[:43404], batch_size=nb_batch_size,validation_data=([aaa[43404:49214],aaa[43404:49214],bbb[43404:49214],bbb[43404:49214]], ddd[43404:49214]),epochs=nb_epoch, shuffle=True, verbose=1)
+        model1.save_weights('AMP_Prediction1.h5',overwrite=True)#869,38150
 
-model1.compile(loss='binary_crossentropy',optimizer=opt,metrics=['accuracy'])
+    # 模型可视化
+    print(model1.summary())
+    plot_model(model1, to_file='DTLDephos.png',
+               show_shapes=True, show_layer_names=True)
 
-history = model1.fit([aaa[:43404],aaa[:43404],bbb[:43404],bbb[:43404]], ddd[:43404], batch_size=nb_batch_size,validation_data=([aaa[43404:49214],aaa[43404:49214],bbb[43404:49214],bbb[43404:49214]], ddd[43404:49214]),epochs=nb_epoch, shuffle=True, verbose=1)
+    opt = adam_v2.Adam(learning_rate=learning_rate,
+                       beta_1=0.9, beta_2=0.999, epsilon=1e-08)
 
-model1.save_weights('AMP_Prediction1.h5',overwrite=True)#869,38150
+    model1.compile(loss='binary_crossentropy',optimizer=opt,metrics=['accuracy'])
 
-#if you want to introduce the pre-trained model by our team, please implement the following codes
-#model1.load_weights('AMP_Prediction111.h5')
-predictions_p = model1.predict([X1tt,X1tt,X2tt,X2tt])#Evaluating the effects on Test dataset
+    history = model1.fit([aaa[:43404],aaa[:43404],bbb[:43404],bbb[:43404]], ddd[:43404], batch_size=nb_batch_size,validation_data=([aaa[43404:49214],aaa[43404:49214],bbb[43404:49214],bbb[43404:49214]], ddd[43404:49214]),epochs=nb_epoch, shuffle=True, verbose=1)
 
+    model1.save_weights('AMP_Prediction1.h5',overwrite=True)#869,38150
+
+    print("Start prediction.......")
+    predictions_p = model1.predict([X1tt,X1tt,X2tt,X2tt])#Evaluating the effects on Test dataset
+    print("Prediction completed.")
 
 
 
