@@ -1,0 +1,9 @@
+gensim==4.3.0
+keras==2.10.0
+matplotlib==3.7.3
+numpy==1.24.4
+pandas==1.5.3
+tensorflow==2.10.0
+tqdm==4.66.5
+propy3==1.1.1
+sklearn=1.0.1
