@@ -23,15 +23,17 @@ By opening and implementing the document Training1.py, you can directly utilize 
 This repository contains models and data for predicting AMPs described in our paper.
 
 ## Requirements
-- python 3.9.7 or higher
+- python 3.9.7 or higher (3.9.7 is recommended as priority)
 - keras==2.10.0
 - pandas==1.5.2
-- matplotlib==3.0.3
+- matplotlib==3.0.3 (not compulsory)
 - propy3 (tutorial: https://propy3.readthedocs.io/en/latest/UserGuide.html)
 - numpy==1.23.5
 - sklearn=1.2.0
 - propy3=1.1.0
-- gensim=4.2.0
+- gensim=4.2.0 or 4.3.0
+- scipy=1.9.3
+- -tensorflow=2.0.1
 ## Implementation details:
 
 1. The training sequences were deposited in the document TrainingAMP.csv
