@@ -33,7 +33,7 @@ This repository contains models and data for predicting AMPs described in our pa
 - propy3=1.1.0
 - gensim=4.2.0 or 4.3.0
 - scipy=1.9.3
-- -tensorflow=2.10.0 (it may raise errors if tensorflow version is )
+- tensorflow=2.10.0 (it may raise errors if tensorflow is installed by default "pip install tensorflow"; Please refer to tensorflow=2.10.0 specifically)
 ## Implementation details:
 
 1. The training sequences were deposited in the document TrainingAMP.csv
