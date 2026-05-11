@@ -8,6 +8,7 @@ Created on April 27 11:26:27 2022
 
 import csv
 import numpy as np
+from concurrent.futures import ProcessPoolExecutor
 import keras.utils.np_utils as kutils
 # from keras.optimizers import Adam, SGD
 from keras.optimizers import adam_v2
@@ -24,6 +25,7 @@ from keras.models import Sequential, Model
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers, Model
+from tqdm import tqdm
 
 
 
@@ -96,80 +98,78 @@ def getMatrixLabel(positive_position_file_name,sites, window_size=51, empty_aa =
 import gensim
 from gensim.models import Word2Vec
 import numpy as np
-# 
-def getMatrixLabelh(positive_position_file_name, window_size=51, empty_aa = '*'):
-    # input format   label, proteinName, postion, shortsequence
-    # label存储0/1值
-    #positive_position_file_name='trainingAMP.csv'
-    #window_size=50
-    prot = []  #
-    pos = []  #
-    rawseq = [] #
-    all_label = [] #
-    length=[]
-    short_seqs = []
-    #half_len = (window_size - 1) / 2
-
-    with open(positive_position_file_name, 'r') as rf:
-        reader = csv.reader(rf)
-        for row in reader:
-
-                #position = int(row[2])
-                a=window_size-len(row[1])
-                sseq = row[1]#+a*' '
-                rawseq.append(sseq)
-                b=len(row[1])
-                length.append(b)
-                #center = sseq[position - 1]
-            # 
-                all_label.append(int(row[0]))
-                #prot.append(row[1])
-                #pos.append(row[2])
+ 
+def getMatrixLabelh(positive_position_file_name, window_size=600, empty_aa = '*'):
+     # input format   label, proteinName, postion, shortsequence
+     # label存储0/1值
+     #positive_position_file_name='trainingAMP.csv'
+     #window_size=50
+     prot = []  #
+     pos = []  #
+     rawseq = [] #
+     all_label = [] #
+     length=[]
+     short_seqs = []
+     #half_len = (window_size - 1) / 2
+     with open(positive_position_file_name, 'r') as rf:
+         reader = csv.reader(rf)
+         for row in reader:
+                 #position = int(row[2])
+                 a=window_size-len(row[1])
+                 sseq = row[1]#+a*' '
+                 rawseq.append(sseq)
+                 b=len(row[1])
+                 length.append(b)
+                 #center = sseq[position - 1]
+             # 
+                 all_label.append(int(row[0]))
+                 #prot.append(row[1])
+                 #pos.append(row[2])
 
         
-        # Keras的utilities，用于“Converts a class vector (integers) to binary class matrix.”
-        # “A binary matrix representation of the input”
-        targetY = kutils.to_categorical(all_label)
+         # Keras的utilities，用于“Converts a class vector (integers) to binary class matrix.”
+         # “A binary matrix representation of the input”
+         targetY = kutils.to_categorical(all_label)
 
-        ONE_HOT_SIZE = 20
-        # _aminos = 'ACDEFGHIKLMNPQRSTVWY*'
-        letterDict = {}
-        letterDict["A"] = 0;
-        letterDict["C"] = 1;
-        letterDict["D"] = 2;
-        letterDict["E"] = 3;
-        letterDict["F"] = 4;
-        letterDict["G"] = 5;
-        letterDict["H"] = 6;
-        letterDict["I"] = 7;
-        letterDict["K"] = 8;
-        letterDict["L"] = 9;
-        letterDict["M"] = 10;
-        letterDict["N"] = 11;
-        letterDict["P"] = 12;
-        letterDict["Q"] = 13;
-        letterDict["R"] = 14;
-        letterDict["S"] = 15;
-        letterDict["T"] = 16;
-        letterDict["V"] = 17;
-        letterDict["W"] = 18;
-        letterDict["Y"] = 19;
-        #letterDict['Z'] = 23
+         ONE_HOT_SIZE = 20
+         # _aminos = 'ACDEFGHIKLMNPQRSTVWY*'
+         letterDict = {}
+         letterDict["A"] = 0;
+         letterDict["C"] = 1;
+         letterDict["D"] = 2;
+         letterDict["E"] = 3;
+         letterDict["F"] = 4;
+         letterDict["G"] = 5;
+         letterDict["H"] = 6;
+         letterDict["I"] = 7;
+         letterDict["K"] = 8;
+         letterDict["L"] = 9;
+         letterDict["M"] = 10;
+         letterDict["N"] = 11;
+         letterDict["P"] = 12;
+         letterDict["Q"] = 13;
+         letterDict["R"] = 14;
+         letterDict["S"] = 15;
+         letterDict["T"] = 16;
+         letterDict["V"] = 17;
+         letterDict["W"] = 18;
+         letterDict["Y"] = 19;
+         #letterDict['Z'] = 23
+         #
+         #
+         Matr = np.zeros((len(rawseq), window_size, ONE_HOT_SIZE))
+         samplenumber = 0
+         for seq in rawseq:
+             AANo = 0
+             #print(seq)
+             for AA in seq:
+                 index = letterDict[AA]
+                 Matr[samplenumber][AANo][index] = 1
+                 AANo = AANo+1
+             samplenumber = samplenumber + 1
 
-        #
-        #
-        Matr = np.zeros((len(rawseq), window_size, ONE_HOT_SIZE))
-        samplenumber = 0
-        for seq in rawseq:
-            AANo = 0
-            #print(seq)
-            for AA in seq:
-                index = letterDict[AA]
-                Matr[samplenumber][AANo][index] = 1
-                AANo = AANo+1
-            samplenumber = samplenumber + 1
+     return Matr, targetY,rawseq,length
 
-    return Matr, targetY,rawseq,length
 
 # 建立网络的函数
 def conv_factory(x, init_form, nb_filter, filter_size_block, dropout_rate, weight_decay):
@@ -750,66 +750,108 @@ from propy.AAComposition import CalculateAADipeptideComposition
 from propy.AAComposition import GetSpectrumDict
 from propy.AAComposition import Getkmers
 
-def getMatrixLabelFingerprint(positive_position_file_name, window_size=51, empty_aa = '*'):
-       # 
-    # input format   label, proteinName, postion, shortsequence
-    # label 0/1
-    prot = []  # 
-    pos = []  # 
-    rawseq11 = [] # 
-    all_label = [] # 
-    window_size=91
-    short_seqs = []
-    #half_len = (window_size - 1) / 2
-    ONE_HOT_SIZE = 17
-    a=0
-    b=0
-    o=0
-    number=1
-    index=0
-    #positive_position_file_name='111antivirual56297.csv'#'Antivirual.csv'#'测试集.csv'#'Non-AMPsfilter.csv'#'TrainingAMP.csv'#'需要预测的序列6.csv'#'需要预测的序列.csv'#'TrainingAMP.csv'#'测试集.csv'#'细菌素补充数据集.csv'#'TrainingAMP.csv'#'Extracellular space.csv'#'mitochondria.csv'#'Vesicle.csv'#'NonAMPtraining.csv'#'Negative50.csv'#'1.csv'#'Non-AMPsfilter.csv'#'Non-AMPsfilter.csv'#'Training1.csv'#'Non-AMPs.csv'#'验证数据集.csv'#'德国小蠊蛋白组.csv'#'美洲大蠊宏基因组AMPs未预测.csv'#'AMPs.csv'#'Training1T.csv'#'Non-AMPs.csv'#'AMPs.csv'#'Training1.csv'
-    with open(positive_position_file_name, 'r') as rf:
-      reader = csv.reader(rf)
-      for row in reader:
-        #position = int(row[2])
-        #sseq = row[1]
-        rawseq11.append(row[1])
-        #center = sseq[position - 1]
-            # 
-            #if center in sites:
-        #.append(int(row[0]))
-        index=index+1
-        #print(index-1)
-        #prot.append(row[1])
-        #pos.append(row[2])
-                # coding = one_hot_concat(shortseq)
-                # all_codings.append(coding)
+# def getMatrixLabelFingerprint(positive_position_file_name, window_size=51, empty_aa = '*'):
+#        # 
+#     # input format   label, proteinName, postion, shortsequence
+#     # label 0/1
+#     prot = []  # 
+#     pos = []  # 
+#     rawseq11 = [] # 
+#     all_label = [] # 
+#     window_size=91
+#     short_seqs = []
+#     #half_len = (window_size - 1) / 2
+#     ONE_HOT_SIZE = 17
+#     a=0
+#     b=0
+#     o=0
+#     number=1
+#     index=0
+#     #positive_position_file_name='111antivirual56297.csv'#'Antivirual.csv'#'测试集.csv'#'Non-AMPsfilter.csv'#'TrainingAMP.csv'#'需要预测的序列6.csv'#'需要预测的序列.csv'#'TrainingAMP.csv'#'测试集.csv'#'细菌素补充数据集.csv'#'TrainingAMP.csv'#'Extracellular space.csv'#'mitochondria.csv'#'Vesicle.csv'#'NonAMPtraining.csv'#'Negative50.csv'#'1.csv'#'Non-AMPsfilter.csv'#'Non-AMPsfilter.csv'#'Training1.csv'#'Non-AMPs.csv'#'验证数据集.csv'#'德国小蠊蛋白组.csv'#'美洲大蠊宏基因组AMPs未预测.csv'#'AMPs.csv'#'Training1T.csv'#'Non-AMPs.csv'#'AMPs.csv'#'Training1.csv'
+#     with open(positive_position_file_name, 'r') as rf:
+#       reader = csv.reader(rf)
+#       for row in reader:
+#         #position = int(row[2])
+#         #sseq = row[1]
+#         rawseq11.append(row[1])
+#         #center = sseq[position - 1]
+#             # 
+#             #if center in sites:
+#         #.append(int(row[0]))
+#         index=index+1
+#         #print(index-1)
+#         #prot.append(row[1])
+#         #pos.append(row[2])
+#                 # coding = one_hot_concat(shortseq)
+#                 # all_codings.append(coding)
         
-        # Keras的utilities，
-        # 输出是“A binary matrix representation of the input”
-        #targetY = kutils.to_categorical(all_label)
-    index=0
-    a=0
-    b=0
-    yyy=np.zeros(shape=(1547,1))
-    Matr = np.zeros((len(rawseq11),window_size, ONE_HOT_SIZE))
+#         # Keras的utilities，
+#         # 输出是“A binary matrix representation of the input”
+#         #targetY = kutils.to_categorical(all_label)
+#     index=0
+#     a=0
+#     b=0
+#     yyy=np.zeros(shape=(1547,1))
+#     Matr = np.zeros((len(rawseq11),window_size, ONE_HOT_SIZE))
 
-    for index in range(0,len(rawseq11)):
-      result = GetProDes(rawseq11[index]).GetALL()
-      print(index)
-      for p in range(0,1547):
-          yyy[p][0]=list(result.values())[p]
-      for i in range(0,91):
-          for j in range(0,17):
-            Matr[index][i][j]=yyy[j+a][0]
-          if a<1530:
-            a=a+17
-          else:
-            a=a
-      a=0
-#np.save(file="X2.npy",arr=aaa) X2=np.load(file="X2.npy")
-#np.save(file="X2s.npy",arr=X_train2) X_train2=np.load(file="X2s.npy")
-#np.save(file="Y.npy",arr=targetY)
+#     for index in range(0,len(rawseq11)):
+#       result = GetProDes(rawseq11[index]).GetALL()
+#       print(index)
+#       for p in range(0,1547):
+#           yyy[p][0]=list(result.values())[p]
+#       for i in range(0,91):
+#           for j in range(0,17):
+#             Matr[index][i][j]=yyy[j+a][0]
+#           if a<1530:
+#             a=a+17
+#           else:
+#             a=a
+#       a=0
+# #np.save(file="X2.npy",arr=aaa) X2=np.load(file="X2.npy")
+# #np.save(file="X2s.npy",arr=X_train2) X_train2=np.load(file="X2s.npy")
+# #np.save(file="Y.npy",arr=targetY)
+#     return Matr
+def process_sequence(sequence, index, window_size=91, one_hot_size=17):
+    """处理单个序列，生成特征矩阵"""
+    result = GetProDes(sequence).GetALL()
+    yyy = np.zeros(shape=(1547, 1))
+    for p in range(1547):
+        yyy[p][0] = list(result.values())[p]
+    
+    Matr = np.zeros((window_size, one_hot_size))
+    a = 0
+    for i in range(window_size):
+        for j in range(one_hot_size):
+            Matr[i][j] = yyy[j + a][0]
+        if a < 1530:
+            a += one_hot_size
+    return index, Matr
+
+
+def getMatrixLabelFingerprint(positive_position_file_name, window_size=91, num_workers=4):
+    """多进程生成特征矩阵"""
+    rawseq11 = []
+    ONE_HOT_SIZE = 17
+
+    # 读取序列文件
+    with open(positive_position_file_name, 'r') as rf:
+        reader = csv.reader(rf)
+        for row in reader:
+            rawseq11.append(row[1])
+    
+    Matr = np.zeros((len(rawseq11), window_size, ONE_HOT_SIZE))
+
+    # 使用多进程并行计算
+    with ProcessPoolExecutor(max_workers=num_workers) as executor:
+        futures = []
+        for index, sequence in enumerate(rawseq11):
+            futures.append(executor.submit(process_sequence, sequence, index, window_size, ONE_HOT_SIZE))
+        
+        # 收集计算结果
+        for future in tqdm(futures, desc="Generating Matrix", unit="sequence"):
+            index, matrix = future.result()
+            Matr[index] = matrix
+
     return Matr
 
 def getMatrixLabelFingerprintp(positive_position_file_name, window_size=51, empty_aa = '*'):
